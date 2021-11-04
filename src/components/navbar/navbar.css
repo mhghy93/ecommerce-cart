@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: sticky;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.logo-img {
+  width: 100%;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.nav-menu li {
+  list-style: none;
+  padding: 0 2rem 0 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.8rem;
+}
