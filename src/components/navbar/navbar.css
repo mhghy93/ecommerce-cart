@@ -3,11 +3,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 3rem;
   flex-wrap: wrap;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .logo {
