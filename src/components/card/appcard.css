@@ -3,6 +3,7 @@
   transition: 0.3s;
   height: 100%;
   border-radius: 15px;
+  background-color: #fff;
 }
 
 .card:hover {
@@ -23,13 +24,24 @@
   margin-bottom: 1.7rem;
 }
 
-.card-description,
-.card-price {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
+.card-rating {
+  margin-bottom: 2rem;
+  width: fit-content;
+  background-color: #333;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+}
+
+.card-rating:hover {
+  background-color: #000;
 }
 
 .card-price {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
   font-weight: 900;
 }
 

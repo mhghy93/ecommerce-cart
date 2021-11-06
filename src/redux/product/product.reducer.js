@@ -13,7 +13,7 @@ const productReducer = (state = INITIAL_STATE, action) => {
     case productActionTypes.SHOW_PRODUCTS:
       return {
         ...state,
-        photos: payload,
+        products: payload,
         loading: false,
       };
     case productActionTypes.PRODUCT_ERROR:

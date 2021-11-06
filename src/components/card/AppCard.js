@@ -1,15 +1,18 @@
 import React from 'react';
+import { ImStarFull } from 'react-icons/im';
 
 import './appcard.css';
 
-const AppCard = ({ image, title, description, price }) => {
+const AppCard = ({ product }) => {
   return (
     <div className="card">
-      <img src={image} alt="Product" className="card-img" />
+      <img src={product.image} alt="Product" className="card-img" />
       <div className="card-container">
-        <h5 className="card-heading">{title}</h5>
-        <p className="card-description">{description}</p>
-        <p className="card-price">₹{price}</p>
+        <h5 className="card-heading">{product.title}</h5>
+        <div className="card-rating">
+          {product.rating.rate} <ImStarFull />
+        </div>
+        <p className="card-price">${product.price}</p>
         <button className="card-btn">Add To Cart</button>
       </div>
     </div>

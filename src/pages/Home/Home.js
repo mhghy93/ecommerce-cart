@@ -1,62 +1,34 @@
-import React from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import './home.css';
+import { getAllProducts } from '../../redux/product/product.actions';
 
 import AppCard from '../../components/card/AppCard';
 
-const Home = () => {
+const Home = ({ product, getAllProducts }) => {
+  useEffect(() => {
+    getAllProducts();
+  }, [getAllProducts]);
+
+  const { products, loading } = product;
   return (
     <div className="home-container">
-      <AppCard
-        image={'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'}
-        title={' Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops'}
-        description={
-          ' our perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday'
-        }
-        price={950}
-      />
-      <AppCard
-        image={'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'}
-        title={' Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops'}
-        description={
-          ' our perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday'
-        }
-        price={950}
-      />
-      <AppCard
-        image={'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'}
-        title={' Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops'}
-        description={
-          ' our perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday'
-        }
-        price={950}
-      />
-      <AppCard
-        image={'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'}
-        title={' Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops'}
-        description={
-          ' our perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday'
-        }
-        price={950}
-      />
-      <AppCard
-        image={'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'}
-        title={' Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops'}
-        description={
-          ' our perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday'
-        }
-        price={950}
-      />
-      <AppCard
-        image={'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'}
-        title={' Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops'}
-        description={
-          ' our perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday'
-        }
-        price={950}
-      />
+      {loading ? (
+        <p>Loading ...</p>
+      ) : (
+        <Fragment>
+          {products.map((product) => (
+            <AppCard product={product} key={product.id} />
+          ))}
+        </Fragment>
+      )}
     </div>
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => ({
+  product: state.product,
+});
+
+export default connect(mapStateToProps, { getAllProducts })(Home);
