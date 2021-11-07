@@ -1,6 +1,6 @@
 const cartActionTypes = {
-  SHOW_PRODUCTS: 'SHOW_PRODUCTS',
-  PRODUCT_ERROR: 'PRODUCT_ERROR',
+  ADD_TO_CART: 'ADD_TO_CART',
+  REMOVE_FROM_CART: 'REMOVE_FROM_CART',
 };
 
 export default cartActionTypes;
