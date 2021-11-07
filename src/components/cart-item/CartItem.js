@@ -1,9 +1,15 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 import { ImBin2 } from 'react-icons/im';
 
 import './cartItem.css';
+import { removeFromCart } from '../../redux/cart/cart.actions';
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, removeFromCart }) => {
+  const handleRemoveFromCart = () => {
+    removeFromCart(item.id);
+  };
+
   return (
     <Fragment>
       <div className="cart-item-container">
@@ -18,7 +24,10 @@ const CartItem = ({ item }) => {
         <div className="cart-item-product">
           <h5 className="cart-item-product-title">{item.title}</h5>
           <h5 className="cart-item-product-price">${item.price}</h5>
-          <button className="cart-item-remove-btn">
+          <button
+            onClick={handleRemoveFromCart}
+            className="cart-item-remove-btn"
+          >
             <ImBin2 />
           </button>
         </div>
@@ -28,4 +37,4 @@ const CartItem = ({ item }) => {
   );
 };
 
-export default CartItem;
+export default connect(null, { removeFromCart })(CartItem);

@@ -29,7 +29,9 @@ const Cart = ({ cart }) => {
           Back
         </button>
         <div className="cart-items">
-          <h3>Products In Your Cart ({items.length > 0 && items.length})</h3>
+          <h3>
+            Products In Your Cart {items.length > 0 && <>({items.length})</>}
+          </h3>
           <hr className="cart-heading-divider" />
           {items.length > 0 ? (
             <Fragment>
