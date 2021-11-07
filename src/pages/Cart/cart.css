@@ -27,6 +27,20 @@
   padding: 1rem;
 }
 
+.back-btn {
+  padding: 0.5rem 1rem;
+  color: #000;
+  background-color: #f2f2f2;
+  border: 1px solid transparent;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 2rem 2rem 0 2rem;
+}
+
+.back-btn:hover {
+  background-color: #d9d9d9;
+}
+
 .order-btn-container {
   display: flex;
   justify-content: flex-end;

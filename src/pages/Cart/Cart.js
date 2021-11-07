@@ -1,13 +1,18 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 import './cart.css';
 
 import CartItem from '../../components/cart-item/CartItem';
 
 const Cart = () => {
+  const history = useHistory();
   return (
     <div className="cart-container">
       <div className="cart-card">
+        <button onClick={() => history.goBack()} className="back-btn">
+          Back
+        </button>
         <div className="cart-items">
           <h3>Products In Your Cart (2)</h3>
           <hr className="cart-heading-divider" />
