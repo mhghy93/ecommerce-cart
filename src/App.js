@@ -4,6 +4,7 @@ import './App.css';
 
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/Home/Home';
+import Cart from './pages/Cart/Cart';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/cart" component={Cart} />
       </Switch>
     </BrowserRouter>
   );

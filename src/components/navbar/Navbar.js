@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BsBagCheck } from 'react-icons/bs';
 
 import './navbar.css';
@@ -8,14 +9,18 @@ import Logo from '../../images/logo.png';
 const Navbar = () => {
   return (
     <header className="header">
-      <div className="logo">
-        <img className="logo-img" src={Logo} alt="logo" />
-      </div>
+      <Link to="/">
+        <div className="logo">
+          <img className="logo-img" src={Logo} alt="logo" />
+        </div>
+      </Link>
       <nav className="navbar">
         <div className="nav-menu">
-          <div className="nav-link">
-            <BsBagCheck />
-          </div>
+          <Link to="/cart">
+            <div className="nav-link">
+              <BsBagCheck />
+            </div>
+          </Link>
         </div>
       </nav>
     </header>
