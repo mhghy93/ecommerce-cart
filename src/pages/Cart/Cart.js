@@ -22,6 +22,13 @@ const Cart = ({ cart }) => {
     }
   };
 
+  const handlePlaceOrder = () => {
+    setTimeout(() => {
+      alert('Order Successful');
+      window.location = '/';
+    }, 100);
+  };
+
   return (
     <div className="cart-container">
       <div className="cart-card">
@@ -39,7 +46,9 @@ const Cart = ({ cart }) => {
                 <CartItem item={item} key={item.id} />
               ))}
               <div className="order-btn-container">
-                <button className="order-btn">Place Order</button>
+                <button onClick={handlePlaceOrder} className="order-btn">
+                  Place Order
+                </button>
               </div>
             </Fragment>
           ) : (
